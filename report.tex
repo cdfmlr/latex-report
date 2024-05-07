@@ -7,12 +7,16 @@
 % ================= title =================
 
 \title{
-    重启蒙娜丽莎\bigskip\par
-    蔓生都会
+    一种简单的 \LaTeX 中文报告\bigskip\par
+    排版示例
 }
 \author{
-    神经漫游者大学 \qquad 赛伯差分机全息玫瑰碎片种植园\\
-    蒟蒻蒻 \qquad 666666666666666 \ \ \quad
+\begin{tabular}{cc}
+    \textbf{神经漫游者大学} & \textbf{全息玫瑰种植园} \\
+    珂朵莉 & 9784041022696 \\
+    W.A. Automaton & 9784041022697 \\
+    蒟\quad 蒻 & 9784041022698
+\end{tabular}
 }
 
 \makeatletter
@@ -31,10 +35,10 @@
 % =============== abstract ===============
 
 {\noindent\bfseries{摘要}}:
-本文展示了一个简单报告的模版，基于 CTeX \cite{ctex}等宏包进行排版。本文旨在提供算法、代码、三线表、图片、双图并排等常用语法实例。
+本文展示了一个简单报告的模版，提供算法、代码、三线表、图片、双图并排等常用语法实例。
 
 {\noindent\bfseries{关键词}}:
-镜子，朝闻道，时间移民，微纪元
+排版, \LaTeX, \CTeX, 数学, 算法, 代码, 表格, 图片
 
 % \setcounter{section}{-1} % 从 0 开始编 section 号
 
@@ -42,7 +46,19 @@
 
 \section{概述}
 
-银河系西旋臂少人问津的末端，未经勘测的荒僻区域深处，有一颗无人理睬的小小黄色恒星。
+该文档是一个简单的 \LaTeX 中文报告示例，旨在展示一些常见的排版语法和效果。
+
+该文档基于包括但不限于 \CTeX \cite{ctex}、amsmath、algorithm2e\cite{algorithm2e}、listings\cite{listings}、threeparttable 等宏包进行排版。\footnote{此处的参考引用也只作为排版示例，不全面和准确。}
+
+本文第 \ref{sec_text}、\ref{sec_math}、\ref{sec_enum_algo_code}、\ref{sec_table_img} 节展示了一些常见的文本、数学、枚举、算法、代码、表格 和 图片等排版。
+
+可以借助 VS Code + \LaTeX\ Workshop 编译该文档，如附录 \ref{appendix_a} 所示。
+
+\section{文本}\label{sec_text}
+
+\subsection{基础正文}
+
+银河系西旋臂少人问津的末端，未经勘测的荒僻区域深处，有一颗无人理睬的小小黄色恒星。\footnote{本节内容选自《银河系搭车客指南》（道格拉斯·亚当斯 著，姚向辉 译，上海译文出版社，2014）}
 
 以约莫九千两百万英里半径绕其旋转的，是一颗彻底无关紧要的小小蓝绿色行星，这里从\emph{猿猴}繁衍而来的生命形式原始得让人吃惊，居然还以为\emph{数字式电子表}是什么很高明的主意。
 
@@ -50,34 +66,58 @@
 
 于是乎，问题依然如故；很多人类过得一塌糊涂，其中大部分更是生不如死，连戴数字式电子表的也不例外。
 
-% 很多人越来越认为，当初从树上下来已是大错特错。有些人甚至说连上树这一步都不对，一开始就不该离开海洋。
+很多人越来越认为，当初从树上下来已是大错特错。有些人甚至说连上树这一步都不对，一开始就不该离开海洋。
 
-% 如此这般，距离某君因为说大家都该换换思路、与人为善而被钉在树上约两千年后的某个星期四，有位姑娘独自坐在里克曼沃斯的小咖啡馆里，忽然领悟到一直以来究竟是哪儿出了岔子，终于知道了怎样把这个世界变成和谐欢乐的好地方。这次的解决方案很正确，能成功，也不会有人被钉在任何东西上。
+如此这般，距离某君因为说大家都该换换思路、与人为善而被钉在树上约两千年后的某个星期四，有位姑娘独自坐在里克曼沃斯的小咖啡馆里，忽然领悟到一直以来究竟是哪儿出了岔子，终于知道了怎样把这个世界变成和谐欢乐的好地方。这次的解决方案很正确，能成功，也不会有人被钉在任何东西上。
 
-% 可令人悲哀的是，在她有机会找到电话告诉别人之前，一场恐怖而愚蠢的大灾难陡然降临，她的想法因此永远湮灭。
+可令人悲哀的是，在她有机会找到电话告诉别人之前，一场恐怖而愚蠢的大灾难陡然降临，她的想法因此永远湮灭。
 
-% 这是她的故事。
+这是她的故事。
 
-\section{设计与实现}
+\subsection{文本样式}\label{sec_text_style}
 
-可以借助 VS Code + \LaTeX\ Workshop 编译该文档，如附录 \ref{appendix_a} 所示。
+以下是一些常见的文本样式演示。冒号（“：”）左边为效果，右边为 LaTeX 代码。
 
-\subsection{文本}
- 
-随着四散迸溅的旋律，一个色彩变幻不定的小球渐渐胀大，在半空中爆裂成众多不规则的团块\cite{sklearn}，一起盘旋而上，然后迅速下落，如同相互交错的弧形彩带\cite{movielens}。那些团块又凝聚成无数颗小珠子，每颗的色彩都不尽相同——这时候，\emph{贝泰}开始看出一点名堂了：
-\begin{equation}
-    b_{ui} = \mu+b_u+b_i
+\begin{itemize}
+    \item \textbf{粗体}：\verb|\textbf{粗体}的文字|
+    \item \textit{斜体}：\verb|\textit{斜体}的文字|
+    \item \underline{下划线}：\verb|\underline{下划线}的文字|
+    \item \emph{强调}：\verb|\emph{强调}的文字|
+    \item \texttt{等宽}：\verb|\texttt{等宽}的文字|
+    \item \textsc{小型大写}：\verb|\textsc{小型大写}的文字|
+    \item \textsf{无衬线}：\verb|\textsf{无衬线}的文字|
+    \item \textcolor{red}{红色}：\verb|\textcolor{red}{红色}的文字|
+    \item URL，如 \url{https://url.com}：\verb|\url{https://url.com}|
+    \item 超链接，如 \href{https://url.com}{链接}：\verb|\href{https://url.com}{链接}|
+    \item 脚注\footnote{这是一个脚注}：\verb|\footnote{这是一个脚注}|
+    \item 交叉引用，如 \ref{sec_math_example} 节：\verb|\ref{sec_math_example}|
+\end{itemize}
+
+行内数学公式，参考第 \ref{sec_math} 节。行内代码参考第 \ref{sec_inline_code} 节。
+
+\section{数学}\label{sec_math}
+
+\subsection{基础数学}
+
+行内数学公式，如 $a^2 + b^2 = c^2$ 可通过 \verb|$a^2 + b^2 = c^2$| 实现，或者，也可以使用 \verb$\(...\)$，如 \( e^{i\pi} + 1 = 0 \)。
+
+下面则是一个独立的数学公式，通过 \verb$\[...\]$ 实现：
+
+\[
+    \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\]
+
+当然，也可以使用 \verb$\begin{equation}...\end{equation}$ 环境，如公式 \ref{eq_equation} 所示：
+
+\begin{equation}\label{eq_equation}
+    \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
 \end{equation}
 
-她发现如果闭起眼睛，彩色的图案 $u$ 反而更加清晰\cite{surprise}；每颗彩珠的每个小动作 $i=i(u)$ 都带着特有的节奏；她还发现自己竟然无法确认这些色彩；此外彩珠其实并非珠状，而是许多小小的人形。 
+更多数学公式的排版可以参考 \url{https://www.overleaf.com/learn/latex/Mathematical_expressions}.
 
-用 \verb$\verb|...|$ 可以写句内的等宽代码，如果代码内要有竖线(\verb$|$)，则可以把定界符 \verb$|$ 替换为 \verb|$|。
+\subsection{定理环境}
 
-\subsection{数学}
-
-The content of this section is randomly  stolen from \url{https://github.com/runfengtsui/mathnotes} \emph{without} the author's permission. And random modifications are made for the sake of testing.
-
-注意，其中用到的定义，命题，定理，推论等环境\emph{并非内置}，需要通过 \verb$\newtheorem$ 命令定义，如代码 \ref{newtheorem_demo} 所示。
+定义，命题，定理，推论等环境\emph{并非内置}，需要通过 \verb$\newtheorem$ 命令定义，如代码 \ref{newtheorem_demo} 所示。
 
 \begin{lstlisting}[language=Tex, caption={Newtheorem example}, label={newtheorem_demo}]
     \newtheorem{definition}{\indent 定义}[section]
@@ -86,7 +126,9 @@ The content of this section is randomly  stolen from \url{https://github.com/run
     \newtheorem{corollary}{\indent 推论}[section]
 \end{lstlisting}
 
-\subsubsection{连续同伦算法}
+完成定义之后，可以在文档中使用这些环境，如下文第 \ref{sec_math_example} 节所示。
+
+\subsubsection{示例：连续同伦算法}\label{sec_math_example}
 
 \newtheorem{definition}{\indent 定义}[section]
 \newtheorem{proposition}{\indent 命题}[section]
@@ -95,6 +137,7 @@ The content of this section is randomly  stolen from \url{https://github.com/run
 
 \begin{definition}
   设 \(X\) 与 \(Y\) 是拓扑空间, \(f_0,f_1:X\to Y\) 是连续映像. 记 \(I=[0,1]\). 若存在连续映像 \(H:X\times I\to Y\), 使得对一切 \(x\in X\) 成立 \(H(x,0)=f_0(x)\) 与 \(H(x,1)=f_1(x)\), 则称 \(f_0\) 同伦于 \(f_1\), 记为 \(f_0\simeq f_1:X\to Y\). 称映像 \(H\) 为从 \(f_0\) 到 \(f_1\) 的\textbf{同伦}或\textbf{伦移}, 记为 \(H:f_0\simeq f_1\) 或 \(f_0 \overset{H}{\simeq} f_1\). 若一个映像 \(f:X\to Y\) 同伦于常值映像, 就说 \(f\) 是一个\textbf{零伦}, 记为 \(f\simeq 0\).
+  \footnote{The content of this section is randomly  stolen from \url{https://github.com/runfengtsui/mathnotes} \emph{without} the author's permission. Random modifications are made for the sake of testing.}
 \end{definition}
 
 \begin{theorem}
@@ -117,7 +160,28 @@ The content of this section is randomly  stolen from \url{https://github.com/run
 设 \(\Omega\) 为 \(\mathrm{R}^n\) 中的有界闭凸集, 映像 \(F:\Omega\to \Omega\) 连续. 则 \(F\) 在 \(\Omega\) 中必有不动点, 即必有 \(\boldsymbol{x}^*\in \Omega\), 使得 \(F \left(\boldsymbol{x}^*\right)=\boldsymbol{x}^*\).
 \end{corollary}
 
-\subsection{算法 \label{knn} }
+\section{枚举、算法和代码}\label{sec_enum_algo_code}
+
+
+\subsection{枚举}
+
+下面是一个 \verb|\begin{enumerate}...\end{enumerate}| 环境的示例：
+
+\begin{enumerate}
+    \item 海伯利安\\
+    第八届世界未来学大会在哥斯达黎加举行。说实话，要不是塔兰托加教授明确指示我必须参加这个会议，我根本不会去纽纳斯那种地方。
+
+    \item 海伯利安的陨落（后面刻意加了大空行：）\\
+
+    \item 安迪密恩
+
+    \item 安迪密恩的觉醒
+
+\end{enumerate}
+
+上文第 \ref{sec_text_style} 节中的文本样式演示，是一个 \verb|\begin{itemize}...\end{itemize}| 环境的示例。
+
+\subsection{算法}
 
 算法块由 algorithm2e 宏包\cite{algorithm2e}实现，排版效果如算法 \ref{algo_recom} 所示。
 
@@ -144,21 +208,13 @@ The content of this section is randomly  stolen from \url{https://github.com/run
     return $\{o'_0, \cdots, o'_k\} \subseteq  O'$\;
 \end{algorithm}
 
-\subsection{枚举}
-
-\begin{enumerate}
-    \item 海伯利安\\
-    第八届世界未来学大会在哥斯达黎加举行。说实话，要不是塔兰托加教授明确指示我必须参加这个会议，我根本不会去纽纳斯那种地方。
-
-    \item 海伯利安的陨落（后面刻意加了大空行：）\\
-
-    \item 安迪密恩
-
-    \item 安迪密恩的觉醒
-
-\end{enumerate}
-
 \subsection{代码}
+
+\subsubsection{行内代码}\label{sec_inline_code}
+
+用 \verb$\verb|...|$ 可以写句内的等宽代码，如果代码内要有竖线(\verb$|$)，则可以把定界符 \verb$|$ 替换为 \verb|$|。
+
+\subsubsection{代码块}
 
 代码块使用 listings 宏包\cite{listings}实现。配置了等宽小字体，支持多种语言的基本语法高亮，如代码 \ref{lst_code} 所示。
 
@@ -194,16 +250,38 @@ def incmatrix(genl1,genl2):
     return M
 \end{lstlisting}
 
-\section{实验}
+\section{表格和图片}\label{sec_table_img}
 
 \subsection{表格}
 
-如表 \ref{tab_emotextBenchmark} 所示。该表格语法较为复杂，是由于引入了宽度缩放（tabcolsep）、表格注释（threeparttable）、三线表（toprule、midrule、bottomrule）等诸多特性的缘故，在实际的使用中，可以按需删减。
+表 \ref{tab_simple} 是一个简单的表格 \footnote{该表格统计了《银河帝国（全套 15 册）》（艾萨克·阿西莫夫 著，叶李华 译，江苏凤凰文艺出版社，2012）系列书籍。}，使用了 tabular 环境。
+
+\begin{table}[!ht]
+    \centering
+    \caption{一个简单的表格}
+    \label{tab_simple}
+    \begin{tabular}{ccl}
+        \hline
+        系列 & & 书籍 \\
+        \hline
+        机器人  & 短篇集 & 我·机器人 \\
+               & 长篇 & 钢穴，裸阳，曙光中的机器人，机器人与帝国 \\
+        \\
+        银河帝国 & 三部曲 & 繁星若尘，星空暗流，苍穹一粟 \\
+        \\
+        基地 & 前传 & 基地前奏，迈向基地 \\
+            & 三部曲 & 基地，基地与帝国，第二基地 \\
+            & 后传 & 基地边缘，基地与地球\\
+        \hline
+    \end{tabular}
+\end{table}
+
+一个复杂的表格如表 \ref{tab_emotextBenchmark} 所示。该表引入了宽度缩放（tabcolsep）、表格注释（threeparttable）、三线表（toprule、midrule、bottomrule）等诸多特性，在实际的使用中，可以按需删减。
 
 \begin{table}[!ht]
     \centering
     \setlength{\tabcolsep}{8mm}{
-        \caption{某种带有注释的三线表}
+        \caption{某种带有注释的复杂三线表}
         \label{tab_emotextBenchmark}
         \begin{threeparttable}
             \begin{tabular}{cccc}

@@ -33,7 +33,7 @@
 对于最小化的 Basic TeX 环境，（至少）需要安装以下包：
 
 ```sh
-sudo tlmgr install ctex caption threeparttable listings ifoddpage relsize amsmath
+sudo tlmgr install ctex caption threeparttable listings ifoddpage relsize amsmath algorithm2e
 ```
 
 ## 例子
