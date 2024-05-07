@@ -28,6 +28,14 @@
 - 双图并排
 - 编号附录
 
+## 依赖
+
+对于最小化的 Basic TeX 环境，（至少）需要安装以下包：
+
+```sh
+sudo tlmgr install ctex caption threeparttable listings ifoddpage relsize amsmath
+```
+
 ## 例子
 
 示例代码:

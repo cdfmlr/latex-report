@@ -73,6 +73,50 @@
 
 用 \verb$\verb|...|$ 可以写句内的等宽代码，如果代码内要有竖线(\verb$|$)，则可以把定界符 \verb$|$ 替换为 \verb|$|。
 
+\subsection{数学}
+
+The content of this section is randomly  stolen from \url{https://github.com/runfengtsui/mathnotes} \emph{without} the author's permission. And random modifications are made for the sake of testing.
+
+注意，其中用到的定义，命题，定理，推论等环境\emph{并非内置}，需要通过 \verb$\newtheorem$ 命令定义，如代码 \ref{newtheorem_demo} 所示。
+
+\begin{lstlisting}[language=Tex, caption={Newtheorem example}, label={newtheorem_demo}]
+    \newtheorem{definition}{\indent 定义}[section]
+    \newtheorem{proposition}{\indent 命题}[section]
+    \newtheorem{theorem}{\indent 定理}[section]
+    \newtheorem{corollary}{\indent 推论}[section]
+\end{lstlisting}
+
+\subsubsection{连续同伦算法}
+
+\newtheorem{definition}{\indent 定义}[section]
+\newtheorem{proposition}{\indent 命题}[section]
+\newtheorem{theorem}{\indent 定理}[section]
+\newtheorem{corollary}{\indent 推论}[section]
+
+\begin{definition}
+  设 \(X\) 与 \(Y\) 是拓扑空间, \(f_0,f_1:X\to Y\) 是连续映像. 记 \(I=[0,1]\). 若存在连续映像 \(H:X\times I\to Y\), 使得对一切 \(x\in X\) 成立 \(H(x,0)=f_0(x)\) 与 \(H(x,1)=f_1(x)\), 则称 \(f_0\) 同伦于 \(f_1\), 记为 \(f_0\simeq f_1:X\to Y\). 称映像 \(H\) 为从 \(f_0\) 到 \(f_1\) 的\textbf{同伦}或\textbf{伦移}, 记为 \(H:f_0\simeq f_1\) 或 \(f_0 \overset{H}{\simeq} f_1\). 若一个映像 \(f:X\to Y\) 同伦于常值映像, 就说 \(f\) 是一个\textbf{零伦}, 记为 \(f\simeq 0\).
+\end{definition}
+
+\begin{theorem}
+  记 \(C(X,Y)\) 是 \(X\) 到 \(Y\) 的一切连续映像之集合, 则同伦关系在 \(C(X,Y)\) 中是一种等价关系.
+\end{theorem}
+
+根据这一定理, 从 \(X\) 到 \(Y\) 的连续映像集合 \(C(X,Y)\) 按同伦关系可分成若干互不相交的等价类, 其中每一类成为一个\textbf{同伦类}.
+
+常见同伦:
+\begin{description}
+  \item[线性同伦] \(H(x,t)=tg(x)+(1-t)f(x)\);
+  \item[Newton 同伦] \(H(x,t)=\);
+\end{description}
+
+\begin{theorem}[广义 Sard 定理, 参数化 Sard 定理]
+设 \(U\subset\mathbb{R}^m,V\subset\mathbb{R}^q\) 是开集, \(\phi:U\times V\to\mathbb{R}^p\) 是 \(C^r\) 映射, \(r\ge\max\lbrace 0,m-p\rbrace\). 若 \(0\in\mathbb{R}^p\) 是 \(\phi\) 的正则值, 则对几乎所有 \(a\in V\), \(0\) 是映射 \(\phi(\cdot,a):U\to\mathbb{R}^p\) 的正则值.
+\end{theorem}
+
+\begin{corollary}
+设 \(\Omega\) 为 \(\mathrm{R}^n\) 中的有界闭凸集, 映像 \(F:\Omega\to \Omega\) 连续. 则 \(F\) 在 \(\Omega\) 中必有不动点, 即必有 \(\boldsymbol{x}^*\in \Omega\), 使得 \(F \left(\boldsymbol{x}^*\right)=\boldsymbol{x}^*\).
+\end{corollary}
+
 \subsection{算法 \label{knn} }
 
 算法块由 algorithm2e 宏包\cite{algorithm2e}实现，排版效果如算法 \ref{algo_recom} 所示。
